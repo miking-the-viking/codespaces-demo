@@ -23,7 +23,11 @@
     "update": "nx migrate latest",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "hasura:status": "cd hasura && hasura migrate status --skip-update-check",
+    "hasura:migrate": "cd hasura && hasura migrate apply",
+    "hasura:squash": "cd hasura && rm -rf migrations/* && hasura migrate create \"initial\" --from-server",
+    "hasura:generate": "graphql-codegen --config ./graphql/hasura/codegen.hasura.yml"
   },
   "private": true,
   "dependencies": {
@@ -69,6 +73,7 @@
     "babel-jest": "26.2.2",
     "@types/styled-components": "5.1.0",
     "@types/react-is": "16.7.1",
-    "babel-plugin-styled-components": "1.10.7"
+    "babel-plugin-styled-components": "1.10.7",
+    "hasura-cli": "^1.3.0"
   }
 }

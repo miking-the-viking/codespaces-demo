@@ -1,0 +1,17 @@
+## Database
+## -------------------------------------------
+export DB_USER=king
+export DB_PASSWORD=miking
+export DB_HOST=postgres
+export DB_HOST_TEST=postgres-test
+export DB_PORT=5432
+export DB_NAME=gog
+
+
+## Hasura
+## -------------------------------------------
+export HASURA_PORT=8081
+export HASURA_GRAPHQL_DATABASE_URL=postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}
+export HASURA_GRAPHQL_ENABLE_CONSOLE=true
+export HASURA_GRAPHQL_ENABLED_LOG_TYPES='startup, http-log, webhook-log, websocket-log, query-log'
+export HASURA_GRAPHQL_MIGRATIONS_DIR=$PWD/hasura/migrations
